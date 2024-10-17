@@ -8,7 +8,7 @@ public class ExceptionMiddleware
     private readonly RequestDelegate _next;
     private readonly HttpExceptionHandler _httpExceptionHandler;
 
-    public ExceptionMiddleware(HttpExceptionHandler exceptionHandler, RequestDelegate next)
+    public ExceptionMiddleware(RequestDelegate next)
     {
         _httpExceptionHandler = new HttpExceptionHandler();
         _next = next;

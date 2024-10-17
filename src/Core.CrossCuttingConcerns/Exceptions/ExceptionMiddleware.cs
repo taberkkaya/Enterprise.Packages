@@ -10,8 +10,8 @@ public class ExceptionMiddleware
 
     public ExceptionMiddleware(RequestDelegate next)
     {
-        _httpExceptionHandler = new HttpExceptionHandler();
         _next = next;
+        _httpExceptionHandler = new HttpExceptionHandler();
     }
 
     public async Task Invoke(HttpContext context)

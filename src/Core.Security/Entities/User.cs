@@ -10,7 +10,9 @@ public class User : Entity<int>
     public byte[] PasswordSalt { get; set; }
     public byte[] PasswordHash { get; set; }
     public bool Status { get; set; }
-    public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } = null!; 
+    public virtual ICollection<UserOperationClaim> UserOperationClaims { get; set; } = null!;
+    public virtual ICollection<RefreshToken> RefreshTokens { get; set; } = null!;
+    public virtual ICollection<OtpAuthenticator> OtpAuthenticators { get; set; } = null!;
 
     public User()
     {
@@ -33,7 +35,7 @@ public class User : Entity<int>
 
     public User(int id, string firstName, string lastName, string email, byte[] passwordSalt, byte[] passwordHash, bool status) : base(id)
     {
-        Id = id;    
+        Id = id;
         FirstName = firstName;
         LastName = lastName;
         Email = email;
